@@ -1,0 +1,137 @@
+/* MAIN CLASSES */
+.trending-section,
+.recent-section,
+.authors-section {
+    margin-block: 4em;
+} 
+
+.grid-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+
+.container {
+    padding-inline: 20px;
+}
+
+@media screen and (min-width: 480px) {
+    .container {
+        padding-inline: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding-inline: 60px;
+    }
+}
+
+.section-title {
+    position: relative;
+    font-family: 'Roboto Slab', serif;
+    font-size: clamp(2rem, 3.5vw, 5rem); 
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid var(--main-color);
+}
+
+
+/* HERO SECTION */
+main .hero-section {
+    height: 80vh;
+    margin-block: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .hero-section .hero-content .hero-title:after {
+    border-bottom: none;
+}
+
+main .hero-section .hero-content h1 > span {
+    color: var(--main-color)
+}
+
+main .hero-section .hero-content p {
+    font-size: clamp(1rem, 1.5vw, 2rem); 
+    line-height: 1.5;
+}
+
+main .hero-section .hero-content > button {
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 480px) {
+   
+}
+
+main .hero-section img {
+    width: 525px;
+}
+
+/* TRENDING SECTION */
+main .trending-section.diagonal {
+    padding-block: 5em;
+    --skew-angle: -5deg;
+    --background-clr: var(--font-color);
+    position: relative;    
+    isolation: isolate;
+}
+
+main .trending-section.diagonal::after {
+    content: '';
+    background: var(--background-clr);        
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    transform: skewY(var(--skew-angle));
+}
+
+main .trending-section .section-title {
+    color: white;
+}
+
+.trending-section .article-card .article-card-content .article-title,
+.trending-section .article-card .article-card-content .article-author {
+    color: white;
+}
+
+
+/* MAIN CONTENT CLASSES */
+.article-card {
+    margin-top: 30px;
+}
+.article-card .article-card-content {
+   margin-top: 5px;
+   line-height: 1.2;
+}
+
+.article-card .article-card-content .article-category {
+    color: var(--main-color);
+    font-size: clamp(1rem, 1.25vw, 2rem); 
+    font-weight: bold;
+ }
+
+ .article-card .article-card-content .article-title {
+    font-weight: bold;
+    font-size: clamp(1rem, 1.75vw, 2rem);
+ }
+
+ .article-card .article-card-content .article-author {
+    font-size: clamp(0.75rem, 1vw, 2rem);
+ }
+
+
+
+
+

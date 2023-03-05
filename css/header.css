@@ -1,0 +1,41 @@
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 8vh;
+}
+
+header nav .hamburger-menu {
+  cursor: pointer;
+}
+
+header nav .hamburger-menu .line1, 
+header nav .hamburger-menu .line2, 
+header nav .hamburger-menu .line3 {
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  transform: rotate(-20deg);
+  background: var(--main-color);
+}
+
+header nav .hamburger-menu > div:not(:first-child) {
+  margin-top: 3px;
+  background: var(--font-color);
+}
+
+header nav .desktop-menu {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px solid blue; */
+}
+
+header nav .desktop-menu .nav-menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 2px solid red; */
+  gap: 2rem;
+}
+
