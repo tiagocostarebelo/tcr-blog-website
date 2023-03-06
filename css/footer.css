@@ -1,0 +1,25 @@
+footer {
+    background-color: var(--font-color);
+    color: white;
+    padding-block: 2em;
+}
+
+footer .footer-logo {
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--main-color);
+}
+
+footer .footer-links {
+    /* padding-bottom: 5px; */
+    border-bottom: 2px solid var(--main-color);
+}
+
+footer .copyright {
+    margin-top: 20px;
+    font-size: clamp(0.8em, 1vw, 1em);
+}
+
+footer .description {
+    margin-top: 20px;
+    font-size: clamp(0.7em, 1vw, 1em);
+}
