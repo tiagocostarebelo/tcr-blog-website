@@ -25,7 +25,7 @@
 .recent-section,
 .trending-section,
 .authors-section {
-    /* margin-block: 4em; */
+    padding-block: 4em;
 } 
 
 .section-title {
@@ -86,7 +86,6 @@ main .hero-section img {
 /* RECENT SECTION SECTION */
 
 main .recent-section.diagonal {
-    /* padding-block: 5em; */
     --skew-angle: -5deg;
     --background-clr: var(--font-color);
     position: relative;    
@@ -102,15 +101,22 @@ main .recent-section.diagonal::after {
     transform: skewY(var(--skew-angle));
 }
 
-main .recent-section.reel {
+main .recent-section .reel {
+    --gap: 1rem;
     display: grid;
-    gap: 1rem;
+    gap: var(--gap);
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+    overflow-x:scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--gap);
 }
 
-main .recent-section .section-title {
-    color: white;
+main .recent-section .reel > * {
+    scroll-snap-align: start;
 }
 
+main .recent-section .section-title,
 .recent-section .article-card .article-card-content .article-title,
 .recent-section .article-card .article-card-content .article-author {
     color: white;
@@ -131,16 +137,47 @@ main .recent-section .section-title {
     color: var(--main-color);
     font-size: clamp(1rem, 1.25vw, 2rem); 
     font-weight: bold;
- }
+}
 
- .article-card .article-card-content .article-title {
+.article-card .article-card-content .article-title {
     font-weight: bold;
     font-size: clamp(1rem, 1.75vw, 2rem);
+}
+
+.article-card .article-card-content .article-author {
+    font-size: clamp(0.75rem, 1vw, 2rem);
+}
+
+/* SUBSCRIBE */
+main .subscribe-section {
+    background-color: var(--main-color);
+    padding-block: 2em;
+}
+
+main .subscribe-section .subscribe-title {
+    padding-bottom: 5px;
+    border-bottom: 3px solid white;
+}
+
+main .subscribe-section .form-subsection {
+
+}
+
+main .subscribe-section .form-subsection .description {
+    padding-block: 5px 10px;
+    font-size: clamp(0.75rem, 2vw, 2.75rem);
  }
 
- .article-card .article-card-content .article-author {
-    font-size: clamp(0.75rem, 1vw, 2rem);
- }
+main .subscribe-section .form-subsection form label {
+    display: none;
+}
+
+main .subscribe-section .form-subsection form input[type="email"] {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    color: var(--font-color);
+}
 
 
 
