@@ -28,14 +28,13 @@ header nav .desktop-menu {
   display: none;
   align-items: center;
   justify-content: space-between;
-  /* border: 2px solid blue; */
+  
 }
 
 header nav .desktop-menu .nav-menu-list {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* border: 2px solid red; */
   gap: 2rem;
 }
 
