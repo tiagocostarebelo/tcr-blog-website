@@ -1,4 +1,5 @@
 /* MAIN CLASSES */
+
 .grid-container {
     display: grid;
     grid-gap: 1rem;
@@ -81,8 +82,9 @@ main .hero-section img {
 
 @media screen and (min-width: 1024px) {
     main .hero-section {
-        margin: 0 auto;
-        max-width: 1200px;
+        /* margin: 0 auto;
+        max-width: 1200px; */
+        margin-bottom: 5rem;
     }
 }
 
@@ -102,7 +104,9 @@ main .hero-section img {
 }
 
 @media screen and (min-width: 1024px) {
-    
+    .recent-section {
+        padding-block: 8em;
+    } 
 }
 
 .section-title {
@@ -148,8 +152,8 @@ main .recent-section .reel {
     grid-auto-flow: column;
     grid-auto-columns: 80%;
     overflow-x:scroll;
+    white-space: nowrap;
     scroll-snap-type: x mandatory;
-    /* scroll-padding: var(--gap); */
 }
 
 main .recent-section .reel > * {
@@ -216,8 +220,12 @@ main .subscribe-section .subscribe-title {
     border-bottom: 3px solid white;
 }
 
-main .subscribe-section .form-subsection {
-
+main .subscribe-section .form-subsection form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
 }
 
 main .subscribe-section .form-subsection .description {
@@ -232,13 +240,40 @@ main .subscribe-section .form-subsection form label {
 main .subscribe-section .form-subsection form input[type="email"] {
     width: 100%;
     border: none;
-    padding: 5px;
+    padding: 6px 10px;
+    font-size: clamp(0.75rem, 1.5vw, 2rem);
     color: var(--font-color);
+}
+
+main .subscribe-section .form-subsection form input[type="email"]:focus {
+    outline:var(--font-color);
+}
+
+main .subscribe-section .form-subsection form .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px 20px;
+    font-size: clamp(0.75rem, 1.5vw, 2rem);
+    background-color: var(--font-color);
+    color: var(--main-color);
+}
+
+main .subscribe-section .form-subsection form .btn:hover {
+    background-color: var(--hover-gray);
 }
 
 
 
-
+/* BACK TO TOP BTN */
+.back-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    z-index: 99;
+    outline: none;
+}
 
 
 

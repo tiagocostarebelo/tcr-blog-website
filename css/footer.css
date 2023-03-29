@@ -14,12 +14,13 @@ footer .footer-links {
     border-bottom: 2px solid var(--main-color);
 }
 
-footer .copyright {
+footer .footer-copy .copyright {
     margin-top: 20px;
     font-size: clamp(0.8em, 1vw, 1em);
 }
 
-footer .description {
-    margin-top: 20px;
+footer .footer-copy .description {
+    margin-top: 10px;
     font-size: clamp(0.7em, 1vw, 1em);
 }
+
