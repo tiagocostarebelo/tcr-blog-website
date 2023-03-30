@@ -6,6 +6,7 @@ header nav {
 }
 
 header nav .hamburger-menu {
+  display: block;
   cursor: pointer;
 }
 
@@ -26,15 +27,179 @@ header nav .hamburger-menu > div:not(:first-child) {
 
 header nav .desktop-menu {
   display: none;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  
+  gap: 0.5rem;
 }
 
 header nav .desktop-menu .nav-menu-list {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-around;
-  gap: 2rem;
 }
 
+header nav .desktop-menu .nav-menu-list > * {
+  color: var(--font-color);
+  font-size: 1rem;
+  padding-bottom: 3px;
+  border: 2px solid transparent;
+}
+
+header nav .desktop-menu .nav-menu-list > *:hover {
+  border-bottom: 2px solid var(--main-color);
+}
+
+header nav .desktop-menu .nav-search {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  position: relative;
+}
+
+header nav .desktop-menu .nav-search label {
+  display: none;
+}
+
+header nav .desktop-menu .nav-search input[type="search"] {
+  width: 120px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--font-color);
+  padding: 0px 5px;
+  font-size: 1rem;
+  color: var(--font-color);
+}
+
+header nav .desktop-menu .nav-search > button {
+  border: none;
+  outline: none;
+  background-color: var(--main-color);
+  padding: 2px 5px;
+  position: absolute;
+  bottom: 1px;
+  right: 0px;
+  cursor: pointer;
+}
+
+header nav .desktop-menu .nav-search > button > span {
+  vertical-align: middle;
+  font-size: 1rem;
+  color: white;
+}
+
+header nav .desktop-menu .nav-search > button:hover {      
+  background-color: var(--hover-color);      
+}
+
+header nav .desktop-menu .session-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+header nav .desktop-menu .session-menu .login {
+  padding-block: 5px;
+  cursor: pointer;
+  color: var(--font-color);
+  border: 2px solid transparent;
+}
+
+header nav .desktop-menu .session-menu .login:hover {
+  border-bottom: 2px solid var(--main-color);
+}
+
+
+@media screen and (min-width: 1024px) {
+    header nav .hamburger-menu {
+      display: none;
+    }
+    
+    header nav .desktop-menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;  
+      gap: 2rem;    
+    }
+
+    header nav .desktop-menu .nav-menu-list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;      
+    }
+
+    header nav .desktop-menu .nav-menu-list > * {
+      color: var(--font-color);
+      font-size: 1rem;
+      padding-bottom: 4px;
+      border: 2px solid transparent;
+    }
+
+    header nav .desktop-menu .nav-menu-list > *:hover {
+      border-bottom: 2px solid var(--main-color);
+    }
+
+    header nav .desktop-menu .nav-search {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+    }
+
+    header nav .desktop-menu .nav-search label {
+      display: none;
+    }
+
+    header nav .desktop-menu .nav-search input[type="search"] {
+      width: 100%;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid var(--font-color);
+      padding: 1px 5px;
+      font-size: 1rem;
+      color: var(--font-color);
+    }
+
+    header nav .desktop-menu .nav-search > button {
+      border: none;
+      outline: none;
+      background-color: var(--main-color);
+      padding: 3px 4px;
+      position: absolute;
+      bottom: 1px;
+      right: 0px;
+      cursor: pointer;
+    }
+
+    header nav .desktop-menu .nav-search > button > span {
+      vertical-align: middle;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    header nav .desktop-menu .nav-search > button:hover {      
+      background-color: var(--hover-color);      
+    }
+
+    header nav .desktop-menu .session-menu {
+      display: block;
+    }
+
+    header nav .desktop-menu .session-menu .login {
+      padding-inline: 15px;
+      cursor: pointer;
+      color: var(--font-color);
+    }
+
+    header nav .desktop-menu .session-menu .login:hover {
+      padding-bottom: 9px;
+      border-bottom: 2px solid var(--main-color);
+    }
+
+}
