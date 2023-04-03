@@ -1,7 +1,8 @@
 //TOGGLE DESKTOP MENU
 //get button
 const menuBtn = document.querySelector('.hamburger-menu');
-
+//get menu
+const desktopMenu = document.querySelector('.desktop-menu');
 //click to toggle desktop menu on/off
 menuBtn.addEventListener('click', toggleDesktopMenu);
 
@@ -18,23 +19,18 @@ backTopBtn.addEventListener('click', returnToTop);
 
 //HELPER FUNCTIONS
 function toggleDesktopMenu() { 
-  //get menu
-  let desktopMenu = document.querySelector('.desktop-menu');
-  if (desktopMenu.style.display === "none") {
-    desktopMenu.style.display = "flex";
-  } else {
-    desktopMenu.style.display = "none";
-  }
+  desktopMenu.classList.toggle('active'); 
+  console.log("button clicked");
 }
 
 
 
 function onScrollDisplay() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backTopBtn.style.display = "block";
-      } else {
-        backTopBtn.style.display = "none";
-      }
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      backTopBtn.style.display = "block";
+    } else {
+      backTopBtn.style.display = "none";
+    }
 }
 
 function returnToTop() {

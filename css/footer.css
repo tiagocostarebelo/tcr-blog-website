@@ -10,8 +10,15 @@ footer .footer-logo {
 }
 
 footer .footer-links {
-    /* padding-bottom: 5px; */
     border-bottom: 2px solid var(--main-color);
+}
+
+footer .footer-links .category-list > * {
+    padding-bottom: 10px;
+}
+
+footer .footer-links .category-list > *:first-child {
+    padding-top: 10px;
 }
 
 footer .footer-copy .copyright {

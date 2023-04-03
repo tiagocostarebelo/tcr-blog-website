@@ -1,10 +1,14 @@
 header nav {
+  --nav-height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 8vh;
+  min-height: var(--nav-height);
+  position: relative;
 }
 
+
+/* HAMBURGER BUTTON */
 header nav .hamburger-menu {
   display: block;
   cursor: pointer;
@@ -25,38 +29,61 @@ header nav .hamburger-menu > div:not(:first-child) {
   background: var(--font-color);
 }
 
+/* FULL MENU NAVIGATION MOBILE FIRST */
 header nav .desktop-menu {
-  display: none;
+  display: none;  
+}
+
+/* When nav button clicked, add active class to display */
+header nav .desktop-menu.active {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+
+  width: 100%;
+
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  background-color: white;
+  padding: 2rem;
+  z-index: 1;
+  transition: 0.2s;
 }
 
 header nav .desktop-menu .nav-menu-list {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
+  text-align: center;
+  transition: 0.5s;
 }
 
-header nav .desktop-menu .nav-menu-list > * {
+header nav .desktop-menu .nav-menu-list > * {  
   color: var(--font-color);
   font-size: 1rem;
   padding-bottom: 3px;
   border: 2px solid transparent;
+  margin-bottom: 10px;
+}
+
+/* display active navigation link */
+header nav .desktop-menu .nav-menu-list > *.active {
+  border-bottom: 2px solid var(--main-color);
 }
 
 header nav .desktop-menu .nav-menu-list > *:hover {
   border-bottom: 2px solid var(--main-color);
 }
 
+
+/* NAVIGATION SEARCH STYLING */
 header nav .desktop-menu .nav-search {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
   position: relative;
+  margin-bottom: 10px;
 }
 
 header nav .desktop-menu .nav-search label {
@@ -64,7 +91,7 @@ header nav .desktop-menu .nav-search label {
 }
 
 header nav .desktop-menu .nav-search input[type="search"] {
-  width: 120px;
+  width: calc(35vw);
   outline: none;
   border: none;
   border-bottom: 1px solid var(--font-color);
@@ -77,7 +104,7 @@ header nav .desktop-menu .nav-search > button {
   border: none;
   outline: none;
   background-color: var(--main-color);
-  padding: 2px 5px;
+  padding: 2px 6px;
   position: absolute;
   bottom: 1px;
   right: 0px;
@@ -94,17 +121,19 @@ header nav .desktop-menu .nav-search > button:hover {
   background-color: var(--hover-color);      
 }
 
+/* NAVIGATION LOGIN/REGISTER STYLING */
 header nav .desktop-menu .session-menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.55rem;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 header nav .desktop-menu .session-menu .login {
   padding-block: 5px;
   cursor: pointer;
   color: var(--font-color);
+  font-weight: 700;
   border: 2px solid transparent;
 }
 
@@ -112,9 +141,21 @@ header nav .desktop-menu .session-menu .login:hover {
   border-bottom: 2px solid var(--main-color);
 }
 
+header nav .desktop-menu .session-menu .register-btn {
+  font-weight: 700;
+}
+
 
 @media screen and (min-width: 1024px) {
+    header nav {          
+      padding-block: 1rem;
+    }
+
     header nav .hamburger-menu {
+      display: none;
+    }
+
+    header nav .desktop-menu.active {
       display: none;
     }
     
@@ -123,15 +164,16 @@ header nav .desktop-menu .session-menu .login:hover {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;  
-      gap: 2rem;    
-    }
+      gap: 2rem;
+    }    
 
     header nav .desktop-menu .nav-menu-list {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: .75rem;      
+      gap: .75rem;    
+      margin-block: 0px;  
     }
 
     header nav .desktop-menu .nav-menu-list > * {
@@ -139,6 +181,11 @@ header nav .desktop-menu .session-menu .login:hover {
       font-size: 1rem;
       padding-bottom: 4px;
       border: 2px solid transparent;
+      margin-bottom: 0px;
+    }
+
+    header nav .desktop-menu .nav-menu-list > *.active {
+      border-bottom: 2px solid var(--main-color);
     }
 
     header nav .desktop-menu .nav-menu-list > *:hover {
@@ -150,6 +197,7 @@ header nav .desktop-menu .session-menu .login:hover {
       flex-direction: row;
       align-items: center;
       position: relative;
+      margin-bottom: 0px; 
     }
 
     header nav .desktop-menu .nav-search label {
@@ -179,7 +227,7 @@ header nav .desktop-menu .session-menu .login:hover {
 
     header nav .desktop-menu .nav-search > button > span {
       vertical-align: middle;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: white;
     }
 
