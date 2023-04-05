@@ -5,10 +5,11 @@
 @import url('./footer.css');
 
 :root {
-    --font-color: #454647;
-    --main-color: #ffc043;
-    --hover-color: #ffaa00;
-    --hover-gray: #29292a;
+    --nav-bgcolor: hsla(0, 0%, 100%, 0.75);
+    --font-color: hsl(210, 1%, 27%);
+    --main-color: hsl(40, 100%, 63%);
+    --hover-color: hsl(40, 100%, 50%);
+    --hover-gray: hsl(240, 1%, 16%);
 }
 
 html {

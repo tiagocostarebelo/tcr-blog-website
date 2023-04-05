@@ -1,12 +1,16 @@
-header nav {
-  --nav-height: 8vh;
+header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  min-height: var(--nav-height);
-  position: relative;
-}
+  align-items: center;  
+  padding-block: 0.5rem;
 
+  background-color: var(--nav-bgcolor);
+  
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+}
 
 /* HAMBURGER BUTTON */
 header nav .hamburger-menu {
@@ -30,27 +34,24 @@ header nav .hamburger-menu > div:not(:first-child) {
 }
 
 /* FULL MENU NAVIGATION MOBILE FIRST */
-header nav .desktop-menu {
-  display: none;  
-}
-
 /* When nav button clicked, add active class to display */
-header nav .desktop-menu.active {
+header nav .desktop-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-
-  width: 100%;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--nav-bgcolor);
 
   position: absolute;
-  top: var(--nav-height);
-  left: 0;
-  background-color: white;
-  padding: 2rem;
-  z-index: 1;
-  transition: 0.2s;
+  top: -100vh;
+  right: 0; 
+  transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+header nav .desktop-menu.active {
+  top: 64px;
 }
 
 header nav .desktop-menu .nav-menu-list {
@@ -97,6 +98,7 @@ header nav .desktop-menu .nav-search input[type="search"] {
   border-bottom: 1px solid var(--font-color);
   padding: 0px 5px;
   font-size: 1rem;
+  background-color: transparent;
   color: var(--font-color);
 }
 
@@ -147,24 +149,23 @@ header nav .desktop-menu .session-menu .register-btn {
 
 
 @media screen and (min-width: 1024px) {
-    header nav {          
-      padding-block: 1rem;
-    }
-
     header nav .hamburger-menu {
       display: none;
     }
 
     header nav .desktop-menu.active {
-      display: none;
+      top: 0;
     }
     
     header nav .desktop-menu {
+      position: unset;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;  
       gap: 2rem;
+      padding: 0;
+      background-color:unset;
     }    
 
     header nav .desktop-menu .nav-menu-list {
@@ -200,10 +201,6 @@ header nav .desktop-menu .session-menu .register-btn {
       margin-bottom: 0px; 
     }
 
-    header nav .desktop-menu .nav-search label {
-      display: none;
-    }
-
     header nav .desktop-menu .nav-search input[type="search"] {
       width: 100%;
       outline: none;
@@ -218,7 +215,7 @@ header nav .desktop-menu .session-menu .register-btn {
       border: none;
       outline: none;
       background-color: var(--main-color);
-      padding: 3px 4px;
+      padding: 1px 4px;
       position: absolute;
       bottom: 1px;
       right: 0px;
