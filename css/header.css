@@ -5,6 +5,7 @@ header {
   padding-block: 0.5rem;
 
   background-color: var(--nav-bgcolor);
+  backdrop-filter: blur(2rem);
   
   position: sticky;
   top: 0;
@@ -24,9 +25,10 @@ header nav .hamburger-menu .line3 {
   width: 30px;
   height: 5px;
   border-radius: 10px;
-  transform: rotate(-20deg);
+  transform: rotate(0deg);
   background: var(--main-color);
 }
+
 
 header nav .hamburger-menu > div:not(:first-child) {
   margin-top: 3px;
@@ -43,15 +45,17 @@ header nav .desktop-menu {
   gap: 1rem;
   padding: 2rem;
   background-color: var(--nav-bgcolor);
+  backdrop-filter: blur(2rem);
 
   position: absolute;
-  top: -100vh;
+  top: -200vh;
   right: 0; 
-  transition:cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 header nav .desktop-menu.active {
   top: 64px;
+  width: 100%;
+  transition: top 600ms;
 }
 
 header nav .desktop-menu .nav-menu-list {
@@ -74,6 +78,7 @@ header nav .desktop-menu .nav-menu-list > *.active {
 
 header nav .desktop-menu .nav-menu-list > *:hover {
   border-bottom: 2px solid var(--main-color);
+  transition: 600ms;
 }
 
 
@@ -120,7 +125,8 @@ header nav .desktop-menu .nav-search > button > span {
 }
 
 header nav .desktop-menu .nav-search > button:hover {      
-  background-color: var(--hover-color);      
+  background-color: var(--hover-color); 
+  transition: 300ms;
 }
 
 /* NAVIGATION LOGIN/REGISTER STYLING */
@@ -141,10 +147,15 @@ header nav .desktop-menu .session-menu .login {
 
 header nav .desktop-menu .session-menu .login:hover {
   border-bottom: 2px solid var(--main-color);
+  transition: 600ms;
 }
 
 header nav .desktop-menu .session-menu .register-btn {
   font-weight: 700;
+}
+
+header nav .desktop-menu .session-menu .register-btn:hover {
+  transition: 300ms;
 }
 
 
@@ -166,6 +177,7 @@ header nav .desktop-menu .session-menu .register-btn {
       gap: 2rem;
       padding: 0;
       background-color:unset;
+      backdrop-filter: none;
     }    
 
     header nav .desktop-menu .nav-menu-list {

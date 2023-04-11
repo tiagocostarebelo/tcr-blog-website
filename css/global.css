@@ -5,7 +5,7 @@
 @import url('./footer.css');
 
 :root {
-    --nav-bgcolor: hsla(0, 0%, 100%, 0.75);
+    --nav-bgcolor: hsla(0, 0%, 100%, 0.952);
     --font-color: hsl(210, 1%, 27%);
     --main-color: hsl(40, 100%, 63%);
     --hover-color: hsl(40, 100%, 50%);

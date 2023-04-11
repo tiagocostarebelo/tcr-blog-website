@@ -151,9 +151,10 @@ main .recent-section .reel {
     gap: var(--gap);
     grid-auto-flow: column;
     grid-auto-columns: 80%;
-    overflow-x:scroll;
+    overflow-x: scroll;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
+    padding-block: 20px;
 }
 
 main .recent-section .reel > * {
